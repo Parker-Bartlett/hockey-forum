@@ -14,8 +14,10 @@ public class Category {
 	@GeneratedValue
 	private Long id;
 	private String title;
-	@OneToMany (mappedBy="category")
+	@OneToMany(mappedBy="category")
 	private Collection<Post> posts;
+	
+	public Category() {}
 	
 	public Category(String title) {
 		this.title = title;

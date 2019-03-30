@@ -1,32 +1,21 @@
 package com.hockeyforum.hockeyforum.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.Embeddable;
 
-@Entity
+
+@Embeddable
 public class Comment {
 
-	@Id
-	@GeneratedValue
-	private Long id;
-	@ManyToOne
-	private Post post;
-	private String comment;
-	public Comment(Post post, String comment) {
-		this.post = post;
-		this.comment = comment;
-	}
+	private String commentContent;
 	
-	public Long getId() {
-		return id;
+	public Comment() {}
+	
+	public Comment(String commentContent) {
+		this.commentContent = commentContent;
 	}
-	public Post getPost() {
-		return post;
-	}
-	public String getComment() {
-		return comment;
+
+	public String getCommentContent() {
+		return commentContent;
 	}
 	
 	
