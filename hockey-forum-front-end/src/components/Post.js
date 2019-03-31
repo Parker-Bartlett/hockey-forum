@@ -8,8 +8,8 @@ export default class Post extends Component {
     return this.props.category.posts.map((post) => (
         <div style={postStyle}>
            <h4>{post.title}</h4>
-           <button onClick={this.props.deletePost.bind(this, post.id)}>x</button>
-           <p>{post.body}</p>
+           <button onClick={this.props.deletePost.bind(this, post.id)} style={deleteButton}>delete this post</button>
+           <h5>{post.body}</h5>
            <AddComment key={post.id} post={post} addComment={this.props.addComment}/>
            <Comment post={post} deletePost={this.props.deletePost}/>
         </div>
@@ -20,6 +20,13 @@ export default class Post extends Component {
 const postStyle = {
     margin: '15px',
     textAlign: 'center'
+}
+
+const deleteButton = {
+  padding: '2px',
+  borderRadius: '5px',
+  backgroundColor: 'fireBrick',
+  color: 'white'
 }
 
 //Propt Types

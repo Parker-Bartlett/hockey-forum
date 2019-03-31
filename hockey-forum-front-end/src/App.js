@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.css'
 import Categories from './components/Categories'
 import Header from './components/layout/Header'
 
 class App extends Component {
   state = {
-    posts: [],
     categories: []
   }
 
@@ -17,6 +15,7 @@ class App extends Component {
         .catch(err => console.log(err))
   }
 
+  //trying to figure out how to render another component on click
   // viewSingleCategory = (id) => {
   //   console.log(id)
   //   fetch(`/${id}/posts`)
@@ -56,20 +55,14 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
         <div className="App">
           <Header />
-          <Route exact path="/" render={props => (
-            <React.Fragment>
-              <Categories categories={this.state.categories}
-              viewSingleCategory={this.viewSingleCategory} 
-              deletePost={this.deletePost}
-              addComment={this.addComment}
-              updateCategory={this.updateCategory}/>
-            </React.Fragment>
-          )} />
+          <Categories categories={this.state.categories}
+          viewSingleCategory={this.viewSingleCategory} 
+          deletePost={this.deletePost}
+          addComment={this.addComment}
+          updateCategory={this.updateCategory}/>
         </div>
-      </Router>
     );
   }
 }

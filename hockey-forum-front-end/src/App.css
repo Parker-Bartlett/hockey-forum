@@ -13,3 +13,16 @@ a {
   color: #333;
   text-decoration: none;
 }
+
+h4 {
+  padding: 10px;
+}
+
+h5 {
+  margin: 10px;
+}
+
+p {
+  padding:
+   5px;
+}
