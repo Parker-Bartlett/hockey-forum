@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Post from './Post'
+import UpdateCategoryTitle from './UpdateCategoryTitle'
 
 export default class Category extends Component {
   render() {
@@ -9,6 +10,7 @@ export default class Category extends Component {
         <h2 style={categoryStyle} onClick={this.props.viewSingleCategory.bind(this, this.props.category.id)}>
             {this.props.category.title}
         </h2>
+        <UpdateCategoryTitle updateCategory={this.props.updateCategory} categoryId={this.props.category.id}/>
         <Post category={this.props.category}
         deletePost={this.props.deletePost}
         addComment={this.props.addComment}/>

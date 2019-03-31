@@ -44,6 +44,15 @@ class App extends Component {
       .then(window.location.reload())
       .catch(err => console.log(err))
   }
+  
+  updateCategory = (id, state) => {
+    fetch(`/category/update/title/${id}`, {method: 'POST', body: JSON.stringify(state)})
+      .then(data => {
+        this.setState({categories: data})
+      })
+      .then(window.location.reload())
+      .catch(err => console.log(err))
+  }
 
   render() {
     return (
@@ -55,7 +64,8 @@ class App extends Component {
               <Categories categories={this.state.categories}
               viewSingleCategory={this.viewSingleCategory} 
               deletePost={this.deletePost}
-              addComment={this.addComment}/>
+              addComment={this.addComment}
+              updateCategory={this.updateCategory}/>
             </React.Fragment>
           )} />
         </div>

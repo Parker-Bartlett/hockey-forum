@@ -8,7 +8,8 @@ export default class Categories extends Component {
         <Category key={category.id} category={ category } 
         viewSingleCategory={this.props.viewSingleCategory}
         deletePost={this.props.deletePost}
-        addComment={this.props.addComment}/>
+        addComment={this.props.addComment}
+        updateCategory={this.props.updateCategory}/>
     ))
   }
 }
