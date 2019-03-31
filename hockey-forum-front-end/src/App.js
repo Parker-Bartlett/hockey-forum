@@ -17,14 +17,14 @@ class App extends Component {
         .catch(err => console.log(err))
   }
 
-  viewSingleCategory = (id) => {
-    console.log(id)
-    fetch(`/${id}/posts`)
-      .then(response => response.json())
-      .then(data => this.setState({posts:data}))
-      .catch(err => console.log(err))
-      return <Header />
-  }
+  // viewSingleCategory = (id) => {
+  //   console.log(id)
+  //   fetch(`/${id}/posts`)
+  //     .then(response => response.json())
+  //     .then(data => this.setState({posts:data}))
+  //     .catch(err => console.log(err))
+  //     return <Header />
+  // }
 
   deletePost = (id) => {
     fetch(`/comment/delete/${id}`, {method: 'delete'})

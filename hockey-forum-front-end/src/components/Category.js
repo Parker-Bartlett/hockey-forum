@@ -7,7 +7,7 @@ export default class Category extends Component {
   render() {
     return (
       <div>
-        <h2 style={categoryStyle} onClick={this.props.viewSingleCategory.bind(this, this.props.category.id)}>
+        <h2 style={categoryStyle}>
             {this.props.category.title}
         </h2>
         <UpdateCategoryTitle updateCategory={this.props.updateCategory} categoryId={this.props.category.id}/>

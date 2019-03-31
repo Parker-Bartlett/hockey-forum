@@ -34,6 +34,10 @@ public class Category {
 	public Collection<Post> getPosts() {
 		return posts;
 	}
+
+	public void setTitle(String titleToSet) {
+		this.title = titleToSet;
+	}
 	
 	
 }
