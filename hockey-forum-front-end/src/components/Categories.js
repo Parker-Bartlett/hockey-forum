@@ -5,14 +5,19 @@ import Category from './Category'
 export default class Categories extends Component {
   render() {
     return this.props.categories.map((category) => (
-        <Category category={ category }/>
+        <Category key={category.id} category={ category } 
+        viewSingleCategory={this.props.viewSingleCategory}
+        deletePost={this.props.deletePost}
+        addComment={this.props.addComment}/>
     ))
   }
 }
 
 // Proptypes
 Categories.propTypes = {
-    categories: PropTypes.array.isRequired
+    categories: PropTypes.array.isRequired,
+    deletePost: PropTypes.func.isRequired,
+    addComment: PropTypes.func.isRequired
 }
 
 

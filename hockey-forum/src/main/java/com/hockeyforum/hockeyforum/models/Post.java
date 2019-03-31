@@ -62,5 +62,9 @@ public class Post {
 		comments.add(commentToAdd);
 	}
 	
+	public void removeComment(Comment commentToDelete) {
+		comments.remove(commentToDelete);
+	}
+	
 	
 }
